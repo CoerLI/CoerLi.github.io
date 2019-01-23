@@ -1,7 +1,7 @@
 # Site settings
 title: Lih's blog
 SEOTitle: 李航的博客 | Lih's  blog
-header-img: img/post-bg-desk.jpg
+header-img: img/homePage.jpg
 email: lihang.work@foxmail.com
 description: "日有所进，月有所长"
 keyword: "Lih, Lih's  blog, 李航的博客, lihang, 李航, Java, JVM, 算法"
@@ -12,7 +12,7 @@ github_repo: "https://github.com/CoerLI/CoerLi.github.io.git" # you code reposit
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
 sidebar-about-description: "Keep Moving"
-sidebar-avatar: /img/about-BY-gentle.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
+sidebar-avatar: /img/about-lih.jpeg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
 
