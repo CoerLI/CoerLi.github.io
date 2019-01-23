@@ -3,7 +3,7 @@ title: Lih's blog
 SEOTitle: 李航的博客 | Lih's  blog
 header-img: img/post-bg-desk.jpg
 email: lihang.work@foxmail.com
-description: "日，有所进，月，有所长"
+description: "日有所进，月有所长"
 keyword: "Lih, Lih's  blog, 李航的博客, lihang, 李航, Java, JVM, 算法"
 url: "http://coerli.github.io"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
@@ -86,7 +86,7 @@ gitalk:
 
 # Featured Tags
 featured-tags: true                     # 是否使用首页标签
-featured-condition-size: 1              # 相同标签数量大于这个数，才会出现在首页
+featured-condition-size: 0              # 相同标签数量大于这个数，才会出现在首页
 
 
 
