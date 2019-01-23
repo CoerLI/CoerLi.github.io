@@ -1,10 +1,10 @@
 # Site settings
-title: lih's blog
-SEOTitle: 李航的博客 | lih's blog
+title: Lih's blog
+SEOTitle: 李航的博客 | Lih's  blog
 header-img: img/post-bg-desk.jpg
 email: lihang.work@foxmail.com
 description: "日，有所进，月，有所长"
-keyword: "lih, lih's blog, 李航的博客, lihang, 李航, Java, JVM, 算法"
+keyword: "Lih, Lih's  blog, 李航的博客, lihang, 李航, Java, JVM, 算法"
 url: "http://coerli.github.io"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
 github_repo: "https://github.com/CoerLI/CoerLi.github.io.git" # you code repository
