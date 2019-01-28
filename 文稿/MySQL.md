@@ -116,14 +116,17 @@ insert  into XXX(field1,field2) values(v1,v2);
 delete from XXX where …
 
 更新：
-update ]XXX set xx=xx where …
+update XXX set xx=xx where …
 
 修改表：
 alter table XXX add `name` varchar(16) not null;   			加字段
 alter table XXX drop `name`;                                删字段
 alter table XXX add index nameIndex(`name`);     			加索引
 alter table XXX drop index indexName;                		删索引
-alter table XXX add constraint fk_id foreign(k) references table(k);   		加外键
+alter table XXX add constraint fk_id foreign key(k) references table(k);   	加外键
+alter table XXX drop constraint foreign key fk_id;			删除外键
+alter table XXX add constraint primary key(k);
+alter table XXX drop constraint primary key(k);
 ```
 
 # MySQL索引详解
