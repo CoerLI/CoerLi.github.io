@@ -125,8 +125,8 @@ alter table XXX add index nameIndex(`name`);     			加索引
 alter table XXX drop index indexName;                		删索引
 alter table XXX add constraint fk_id foreign key(k) references table(k);   	加外键
 alter table XXX drop constraint foreign key fk_id;			删除外键
-alter table XXX add constraint primary key(k);
-alter table XXX drop constraint primary key(k);
+alter table XXX add constraint primary key(k);				添加主键
+alter table XXX drop constraint primary key(k);				删除主键
 ```
 
 # MySQL索引详解
