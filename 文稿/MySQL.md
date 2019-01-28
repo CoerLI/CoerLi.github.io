@@ -127,6 +127,8 @@ alter table XXX add constraint fk_id foreign key(k) references table(k);   	加�
 alter table XXX drop constraint foreign key fk_id;			删除外键
 alter table XXX add constraint primary key(k);				添加主键
 alter table XXX drop constraint primary key(k);				删除主键
+重命名表
+建表细节、mysql数据结构、命名习惯、多表查询、时间戳、规范、面向对象、数据结构、git文档
 ```
 
 # MySQL索引详解
