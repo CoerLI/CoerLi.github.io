@@ -1,17 +1,130 @@
----
-layout:     post   			                  # 使用的布局（不需要改）
-title:      MySQL-索引详解                 # 标题 
-subtitle:   深度挖掘MySQL索引设计与实现           #副标题
-date:       2019-01-22 				           # 时间
-author:     Lih 						             # 作者
-header-img: img/post-bg-2015.jpg 	       #这篇文章标题背景图片
-catalog: true 						               # 是否归档
-tags:								                     #标签
-    - MySQL
-    - 数据库
----
-
 [TOC]
+
+# SQL
+
+## 基础原理
+
+### select
+
+多个条件相与用AND连接，相或用OR连接，取反用NOT
+
+字符串可以用like，“%abc%”其中%可以匹配多个字符
+
+字符串用单引号包围
+
+查询结果可以指定别名
+
+select 列1 别名1，列2 别名2 from table where id = 1；
+
+### order by，排序，在where之后
+
+查询结果按照某个字段排序
+
+order by DESC表示逆序
+
+还可以进一步排序
+
+select * from table where sex=‘m’ order by age DESC，id； 
+
+### 分页查询
+
+LIMIT 5 OFFSET 10，最多查询五个，越过前十个。
+
+### 聚合函数
+
+select count(*) from table;
+
+count(*) 也是一个列名，可以指定别名
+
+select count(*)  sum from table;
+
+其他常用聚合函数
+
+sum、avg、max、min
+
+### group by
+
+分组 
+
+### 多表查询
+
+可以使用表.列区分字段
+
+select table1.id,table2.id from table1,table2;
+
+也可以给表设置别名
+
+select a.id,b.id from table1 a,table2 b;
+
+### 连接查询
+
+inner join
+
+两个表的交集
+
+left join
+
+左表全部+右表匹配部分
+
+right join
+
+右表全部+左表匹配部分
+
+full join
+
+两个表的并集
+
+### SQL关键字编写顺序
+
+select  from  where  group by  having  order by
+
+### where和having区别：
+
+where对全部数据进行筛选
+
+having只对group by分组后的数据进行筛选
+
+### 关键字的执行顺序
+
+from->找到涉及到的表
+
+where->筛选涉及的数据
+
+group by->将数据按XX分组
+
+聚合函数count/avg/sum->聚合函数计算
+
+having->筛选计算后的数据
+
+​                     select->选择要呈现的数据
+
+​                          order by   按照升降序排列
+
+## 常用语句：
+
+```mssql
+建表
+create table XXX(
+`id`  int primary key,
+`name` varchar(16) not null
+);
+
+插入：
+insert  into XXX(field1,field2) values(v1,v2);
+
+删除：
+delete from XXX where …
+
+更新：
+update ]XXX set xx=xx where …
+
+修改表：
+alter table XXX add `name` varchar(16) not null;   			加字段
+alter table XXX drop `name`;                                删字段
+alter table XXX add index nameIndex(`name`);     			加索引
+alter table XXX drop index indexName;                		删索引
+alter table XXX add constraint fk_id foreign(k) references table(k);   		加外键
+```
 
 # MySQL索引详解
 
@@ -131,7 +244,7 @@ D-持久性：事务提交后对数据库的影响是永久的。
 
 # MySQL存储引擎
 
-![image-20190128152014162](img/image-20190128152014162.png)
+![image-20190128152014162](/Users/lihang/Library/Application Support/typora-user-images/image-20190128152014162.png)
 
 其中常用的是InnoDB和MyISAM
 
@@ -155,14 +268,26 @@ D-持久性：事务提交后对数据库的影响是永久的。
 
 聚簇索引：普通结点保存索引关键字，叶子结点保存记录数据
 
-![image-20190128152053185](img//image-20190128152053185.png)
+![image-20190128152053185](/Users/lihang/Library/Application Support/typora-user-images/image-20190128152053185.png)
 
 非聚簇索引：普通索引保存关键字，叶子结点保存主键值，然后去聚簇索引查询对应的记录
 
-![image-20190128152103152](img/image-20190128152103152.png)
+![image-20190128152103152](/Users/lihang/Library/Application Support/typora-user-images/image-20190128152103152.png)
 
 #### MyISAM索引实现：天然非聚簇索引
 
 索引结构：B+树保存索引，叶子结点保存数据在磁盘中的地址
 
-![image-20190128152115808](img/image-20190128152115808.png)
+![image-20190128152115808](/Users/lihang/Library/Application Support/typora-user-images/image-20190128152115808.png)
+
+### 引擎选择
+
+有并发需求：InnoDB
+
+更新频繁：InnoDB
+
+需要事务：InnoDB
+
+其他：MyISAM
+
+## 
