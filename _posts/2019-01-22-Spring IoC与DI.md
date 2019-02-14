@@ -1,6 +1,6 @@
 ---
 layout:     post   				          # 使用的布局（不需要改）
-title:      Spring-IoC与DI				   # 标题 
+title:      Spring IoC与DI				   # 标题 
 subtitle:   学习SpringIoC与DI的思想及实现          #副标题
 date:       2019-01-22 				      # 时间
 author:     Lih 						  # 作者
