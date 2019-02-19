@@ -1,6 +1,6 @@
 ---
 layout:     post   				        	# 使用的布局
-title:      Java并发：Synchronized与Lock				  		# 标题 
+title:      Java并发：Synchronized探究				  		# 标题 
 subtitle:   探究Java Synchronized的设计和实现原理          			#副标题
 date:       2019-02-18 				      		# 时间
 author:     Lih 						# 作者
