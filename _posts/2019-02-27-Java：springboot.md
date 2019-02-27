@@ -25,13 +25,49 @@ yaml配置；
 
 
 
-注解：@SpringBootApplication		提示这是一个Springboot项目，springbootApplication相当于@Configuration+@EnableAutoConfiguration+ComponentScan
+注解：
 
-​		@RestController	提示这是一个restful风格的Controller
+> @SpringBootApplication		提示这是一个Springboot项目，springbootApplication相当于
+> @Configuration+@EnableAutoConfiguration+ComponentScan
+> @EnableAutoConfiguration		自动配置
+> @Autowried	自动注入
+> @Controller、@Service、@Component		区分bean类型
+> @RestController	提示这是一个restful风格的Controller
+> @RequestMapping(mappingURL,methodType)	路由，将指定value的请求映射到当前方法，method是指定路由的类型
+> @RunWith(SpringRunner.class)					测试使用，测试时启动spring
 
-​	   @RequestMapping(mappingURL,methodType)	路由，将指定value的请求映射到当前方法，method是指定路由的类型
 
-​	   @EnableAutoConfiguration	自动配置，
 
-​	   
+整合mybatis：
 
+​	添加依赖：
+
+```xml
+<dependency>
+   <groupId>org.mybatis.spring.boot</groupId>
+   <artifactId>mybatis-spring-boot-starter</artifactId>
+   <version>1.3.2</version>
+</dependency>
+```
+
+​	yml中配置属性：
+
+```yaml
+mybatis:
+ type-aliases-package: entity:con.lihang.springboot.entity
+```
+
+在springboot主程序上加入@MapperScan("mapperURL")，在指定路径扫描mapper文件
+
+​	或者在使用@Mapper注明这是一个Mapper类（注解方式，sql可以直接写在类中）
+
+​	注解方式：
+
+```java
+//	使用#{id} 占位变量
+@Delete("DELETE FROM student WHERE id = #{id}")	
+void deleteStudentById(int id);
+// 可以直接使用属性名称，通过自动装配封装和自动拆分
+@Update("UPDATE student SET name = #{name}, age = #{age} WHERE id=#{id}")
+void updateStudent(Student student);
+```
