@@ -23,7 +23,9 @@ yaml配置；
 
 ​	多环境配置：在Spring Boot中多环境配置文件名需要满足application-{profile}.properties/yml的格式，其中{profile}对应你的环境标识	
 
+stater：
 
+一个配置文件和jar的集合，可以简化需要引入依赖，简化依赖管理
 
 注解：
 
