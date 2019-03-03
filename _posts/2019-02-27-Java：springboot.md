@@ -73,3 +73,5 @@ void deleteStudentById(int id);
 @Update("UPDATE student SET name = #{name}, age = #{age} WHERE id=#{id}")
 void updateStudent(Student student);
 ```
+
+https://juejin.im/post/5b83466b6fb9a019b421cecc
