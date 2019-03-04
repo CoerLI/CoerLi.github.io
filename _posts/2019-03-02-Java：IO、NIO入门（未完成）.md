@@ -2,7 +2,7 @@
 layout:     post   				          # 使用的布局（不需要改）
 title:      Java:IO、NIO入门（未完成）				   # 标题 
 subtitle:   JavaIO、NIO入门及概览          			#副标题
-date:       2019-03-2 				      		# 时间
+date:       				      		# 时间
 author:     Lih 						  # 作者
 header-img: img/view06.jpg 				#这篇文章标题背景图片
 catalog: true 							# 是否归档

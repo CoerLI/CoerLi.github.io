@@ -1,8 +1,8 @@
 ---
 layout:     post   				        	# 使用的布局
-title:      SpringBoot入门			  	# 标题 
+title:      SpringBoot入门（未完成）			  	# 标题 
 subtitle:             			# 副标题
-date:       2019-01-21 				      		# 时间
+date:       				      		# 时间
 author:     Lih 						# 作者
 header-img: img/office03.jpg 					# 这篇文章标题背景图片
 catalog: true 							# 是否归档
